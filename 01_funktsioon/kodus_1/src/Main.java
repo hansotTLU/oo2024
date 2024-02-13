@@ -9,8 +9,8 @@ public class Main {
 
         System.out.println();
 
-        prindiTervitus("Ken");
-        prindiTervitus("Hans");
+        prindiTervitus("Ken", '!');
+        prindiTervitus("Hans", '?');
 
         System.out.println();
 
@@ -26,11 +26,11 @@ public class Main {
         return autoKW * 1.36;
     }
 
-    private static void prindiTervitus(String nimi) {
-        System.out.println("Tere, " + nimi + "!");
+    private static void prindiTervitus(String nimi, char mark) {
+        System.out.println("Tere, " + nimi + mark);
     }
 
-    private static String saaAeg(double tund) {
+    private static String saaAeg(int tund) {
         if (tund < 12) {
             return "Hommik";
         } else if (tund < 18) {
