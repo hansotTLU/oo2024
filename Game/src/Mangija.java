@@ -1,10 +1,10 @@
 import java.util.Random;
 
-public class Mangija {
-    int XCoord; // deklareeron (loob + mälukoht)
-    int YCoord;
-    char Symbol;
+// igal klassil saab olla 1 ülemklass (ei saa extend'ida mitut klassi), aga implements võib olla mitu
+public class Mangija extends Tegelane implements JuhuslikKoordinaat{
     Suund suund;
+    Ese ese; //klassikomplekt, üks klass teise sees
+    Soiduk soiduk;
 
     public Mangija(Random random, int kaardiKorgus, int kaardiLaius) {
         XCoord = saaKoordinaat(random, kaardiLaius); // initsialiseerin (annan esimest korda väärtuse)
@@ -25,18 +25,18 @@ public class Mangija {
                 if (YCoord > 1) YCoord--;
             }
             case ALLA -> {
-                if (YCoord < maailm.kaardiKorgus - 1) YCoord++;
+                if (YCoord < maailm.kaardiKorgus - 2) YCoord++;
             }
             case VASAKULE -> {
                 if (XCoord > 1) XCoord--;
             }
             case PAREMALE -> {
-                if (XCoord < maailm.kaardiLaius - 1) XCoord++;
+                if (XCoord < maailm.kaardiLaius - 2) XCoord++;
             }
         }
     } // liigu() kinniminek
 
-    private int saaKoordinaat(Random random, int kaart) { //main'i sees on static ka, klasside see ei ole
+    public int saaKoordinaat(Random random, int kaart) { //main'i sees on static ka, klasside see ei ole
         return random.nextInt(1, kaart - 1);
     }
 } // <-- Mangija kinniminek

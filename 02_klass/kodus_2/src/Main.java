@@ -5,7 +5,10 @@ public class Main {
 
         auto.muudaTookorras();
         System.out.println(auto.mudel + "  töökorras: " + auto.tookorras);
-        double auto2Hind = auto2.tostaHind(500);
+        double autoHind = auto.tostaHind(13000);
+        System.out.println(auto.mudel + "  hind: " + autoHind);
+
+        double auto2Hind = auto2.tostaHind(1);
         System.out.println(auto2.mudel + "  hind: " + auto2Hind);
     }
 }

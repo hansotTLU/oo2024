@@ -1,19 +1,15 @@
 import java.util.Random;
 
-public class Draakon {
-
-    int draakonXCoord;
-    int draakonYCoord;
-    char draakonSymbol;
+public class Draakon extends Tegelane implements JuhuslikKoordinaat{
 
     public Draakon(Random random, int kaardiKorgus, int kaardiLaius) {
-        draakonXCoord = saaKoordinaat(random, kaardiLaius); // initsialiseerin (annan esimest korda väärtuse)
-        draakonYCoord = saaKoordinaat(random, kaardiKorgus);
-        draakonSymbol = 'Ⓓ';
+        XCoord = saaKoordinaat(random, kaardiLaius); // initsialiseerin (annan esimest korda väärtuse)
+        YCoord = saaKoordinaat(random, kaardiKorgus);
+        Symbol = 'Ⓓ';
     }
 
 
-    private int saaKoordinaat(Random random, int kaart) {
+    public int saaKoordinaat(Random random, int kaart) {
         return random.nextInt(1, kaart - 1);
     }
 
