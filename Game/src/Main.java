@@ -13,7 +13,7 @@ public class Main {
 
         Maailm maailm = new Maailm(5, 10);
 
-        Mangija mangija = new Mangija(random, maailm.kaardiKorgus, maailm.kaardiLaius); //kõige vasakul pool on klass (siin nt Mangija), sulgude sees asi mida tahad nt klassile saata
+        Mangija mangija = new Mangija(random, maailm.kaardiKorgus, maailm.kaardiLaius); // kõige vasakul pool on klass (siin nt Mangija), sulgude sees asi mida tahad nt klassile saata
         Draakon draakon = new Draakon(random, maailm.kaardiKorgus, maailm.kaardiLaius);
         Ork ork = new Ork(random, maailm.kaardiKorgus, maailm.kaardiLaius);
         List<Tegelane> tegelased = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Main {
         esemed.add(haamer);
         esemed.add(saabas);
 
-        Scanner scanner = new Scanner(System.in); // järgmine tund (2) selgitame
+        Scanner scanner = new Scanner(System.in); // tund 2 selgitame
 
         maailm.prindiKaart(tegelased, esemed);
         String sisend = scanner.nextLine();
