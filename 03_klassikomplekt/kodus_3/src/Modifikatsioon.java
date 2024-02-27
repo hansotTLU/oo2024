@@ -1,14 +1,14 @@
 public class Modifikatsioon {
-    String muudatus;
+    String nimetus;
     int hind;
 
-    public Modifikatsioon(String muudatus, int hind) {
-        this.muudatus = muudatus;
+    public Modifikatsioon(String nimetus, int hind) {
+        this.nimetus = nimetus;
         this.hind = hind;
     }
 
-    public void paigaldaTehaseHeliSüsteem(String brand) {
-        this.hind += 500; // Tehase helisüsteem lisab 500
+    public void paigaldaHeliSüsteem(String brand) {
+        this.hind += 500; // Helisüsteem lisab 500
     }
 
     public void lisaVeljed(String brand, int suurus) {

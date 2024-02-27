@@ -12,7 +12,7 @@ public class Auto {
         this.värv = värv;
     }
 
-    public void lisaModifikatsioon(String muudatus, int hind) {
-        modifikatsioon = new Modifikatsioon(muudatus, hind);
+    public void lisaModifikatsioon(String nimetus, int hind) {
+        modifikatsioon = new Modifikatsioon(nimetus, hind);
     }
 }
