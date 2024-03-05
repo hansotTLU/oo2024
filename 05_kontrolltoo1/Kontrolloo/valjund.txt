@@ -1,0 +1,27 @@
+Siin - 0
+on - 0
+mingisugune - 0
+tekst, - 0
+kus - 0
+on - 0
+mõndadel - 1
+sõnadel - 1
+A-tähed - 1
+sees. - 0
+See - 0
+on - 0
+teine - 0
+rida, - 1
+kus - 0
+võib - 0
+veel - 0
+paar - 2
+sõna - 1
+olla - 1
+milles - 0
+on - 0
+A-tähed - 1
+sees. - 0
+
+Keskmine a-tähtede arv sõnades: 0.375
+Suhtarv a-tähtede arv sõnades tähtede üldarvu suhtes: 0.07964601769911504
