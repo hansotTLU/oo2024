@@ -3,6 +3,7 @@ package ee.tlu.salat;
 // jpa moodulist pärinev. Hibernate.
 // Kui räägite ChatGPT'ga:
 // import javax.persistence.Table;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
