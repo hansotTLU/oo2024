@@ -1,5 +1,6 @@
 package ee.tlu.kodus;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -7,13 +8,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000") // see ütleb, mis rakendus mulle ligi pääseb
 public class AutoEntityController {
 
-    List<AutoEntity> autod = new ArrayList<>();
+    @Autowired
+    AutoRepository autoRepository;
 
     @GetMapping("autod") // localhost:8080/api/autod
     public List<AutoEntity> saaAutod() {
-        return autod;
+        return autoRepository.findAll();
     }
 
     @PostMapping("autod/{mudel}/{kw}/{mootoriSuurus}/{mootoriTyyp}") // POST localhost:8080/api/autod/MustangGT/224/4.6/V8
@@ -24,19 +27,25 @@ public class AutoEntityController {
             @PathVariable String mootoriTyyp
     ) {
         AutoEntity auto = new AutoEntity(mudel, kw, mootoriSuurus, mootoriTyyp);
-        autod.add(auto);
-        return autod;
+        autoRepository.save(auto);
+        return autoRepository.findAll();
     }
 
-    @DeleteMapping("autod/{index}") // DELETE localhost:8080/api/autod/0
+    @PostMapping("autod")
+    public List<AutoEntity> lisaAuto(@RequestBody AutoEntity auto) {
+        autoRepository.save(auto);
+        return autoRepository.findAll();
+    }
+
+    @DeleteMapping("autod/{mudel}") // DELETE localhost:8080/api/autod/0
     public List<AutoEntity> kustutaAuto(
-            @PathVariable int index
+            @PathVariable String mudel
     ) {
-        autod.remove(index);
-        return autod;
+        autoRepository.deleteById(mudel);
+        return autoRepository.findAll();
     }
 
-    @PutMapping("autod/{index}") // localhost:8080/api/autod/1?mudel=NissanR35&kw=206&mootoriSuurus=2.8&mootoriTyyp=V6
+    @PutMapping("autod") // localhost:8080/api/autod/1?mudel=NissanR35&kw=206&mootoriSuurus=2.8&mootoriTyyp=V6
     public List<AutoEntity> muudaAuto(
             @PathVariable int index,
             @RequestParam String mudel,
@@ -45,16 +54,16 @@ public class AutoEntityController {
             @RequestParam String mootoriTyyp
     ) {
         AutoEntity auto = new AutoEntity(mudel, kw, mootoriSuurus, mootoriTyyp);
-        autod.set(index, auto);
-        return autod;
+        autoRepository.save(auto);
+        return autoRepository.findAll();
     }
 
-    @GetMapping("autod/kw-summa") // localhost:8080/api/autod/kw-summa
+    /*@GetMapping("autod/kw-summa") // localhost:8080/api/autod/kw-summa
     public int saaKWSumma() {
         int summa = 0;
         for (AutoEntity auto : autod) {
             summa += auto.kw;
         }
         return summa;
-    }
+    }*/
 }

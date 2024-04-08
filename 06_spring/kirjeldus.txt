@@ -1,1 +1,18 @@
 Andmebaasi setup
+
+docs:
+Tee uus projekt: https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.2.3&packaging=jar&jvmVersion=17&groupId=ee.tlu&artifactId=salat&name=salat&description=OOP%20Spring%20Salatiprojekt&packageName=ee.tlu.salat&dependencies=lombok,web,postgresql,h2
+Tee uus Controller, millele lisa üles annotationina @RestController (lisa sellele import!).
+Tee järgmised API otspunkti võimekused:
+Tee uus funktsioon mis võimaldab kõiki numbreid näha. Kontrolli kas töötab.
+Tee uus funktsioon mis lisab ühe numbri juurde. Kontrolli kõikide võtmise kaudu kas lisati.
+Tee uus funktsioon mis kustutab ühe numbri. Kontrolli kõikide võtmise kaudu kas kustutati. 
+Tee uus funktsioon mis arvutab mitu numbrit on ja tagastab selle ühe numbrina.
+Tee uus funktsioon mis arvutab kokku kõikide numbrite kogusumma ( for tsükkel ) ja tagastab selle ühe numbrina front-endile.
+Tee uus funktsioon mis arvutab kokku kõikide numbrite keskmise ja tagastab selle ühe numbrina ( mitu varianti, aga üks variantidest for tsükkel jagatuna koguarv ).
+
+------------------------------------------------------------------------------------------------------------------------
+Tee uus Entity, millel on vähemalt 3 omadust, aga üks neist kindlasti number.
+Tee uus Controller, mis hoiustab neid objekte.
+Võimalda neid objekte kätte saada, salvestada, kustutada, muuta.
+Võimalda API otspunkti kaudu seda numbrilist omadust kokku liita (kogusumma kõikide objektide peale), mis tagastatakse front-endile.
