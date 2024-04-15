@@ -11,3 +11,9 @@ public class KodusApplication {
 	}
 
 }
+
+
+// Veakoodid:
+// 404 - URL või API on vale
+// 4xx - front end viga
+// 5xx - back end viga

@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController // kontroller EHK frontend saab siit ligi
 @RequestMapping("/api") // saan igale API otspunktile eesliidese panna
-@CrossOrigin(origins = "http://localhost:3000") // see ütleb, mis rakendus mulle ligi pääseb
+@CrossOrigin(origins = "http://localhost:3000/") // see ütleb, mis rakendus mulle ligi pääseb
 public class ToiduaineEntityController {
 
     // Üks võimalus:
@@ -57,8 +57,6 @@ public class ToiduaineEntityController {
         return toiduaineRepository.findAll();
     }
 
-
-
     // DeleteMapping'ut ei saa brauser teha, saab kasutada POSTMAN'i
     // localhost:8080/api/toiduained/0 DELETE
     @DeleteMapping("toiduained/{nimi}")
@@ -96,5 +94,31 @@ public class ToiduaineEntityController {
     @GetMapping("toiduained-koguarv")
     public int toiduaineteKoguarv() {
         return toiduaineRepository.findAll().size();
+    }
+
+
+
+    /*@GetMapping("toiduained-valk-min/{minValk}")
+    public List<ToiduaineEntity> toiduainedMinValk(@PathVariable int minValk){
+        List<ToiduaineEntity> toiduained = toiduaineRepository.findAll();
+        List<ToiduaineEntity> tingimuseleVastavadToiduained = new ArrayList<>();
+        for (ToiduaineEntity t: toiduained) {
+            if (t.valk >= minValk) {
+                tingimuseleVastavadToiduained.add(t);
+            }
+        }
+        return tingimuseleVastavadToiduained;
+    }*/
+
+    // ülemine aga palju lühem:
+    @GetMapping("toiduained-valk-min/{minValk}")
+    public List<ToiduaineEntity> toiduainedMinValk(@PathVariable int minValk) {
+        return toiduaineRepository.findAllByValkGreaterThan(minValk);
+    }
+
+
+    @GetMapping("toiduained-sysivesik/{min}/{max}")
+    public List<ToiduaineEntity> toiduainedMinValk(@PathVariable int min, @PathVariable int max) {
+        return toiduaineRepository.findAllBySysivesikBetween(min, max);
     }
 }

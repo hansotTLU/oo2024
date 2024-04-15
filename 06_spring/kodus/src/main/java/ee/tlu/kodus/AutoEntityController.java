@@ -58,6 +58,19 @@ public class AutoEntityController {
         return autoRepository.findAll();
     }
 
+    @GetMapping("autod/{mudel}")
+    public AutoEntity saaYksAuto(
+            @PathVariable String mudel
+    ) {
+        return autoRepository.findById(mudel).get();
+    }
+
+    @GetMapping("autod-koguarv")
+    public int autodeKoguarv() {
+        return autoRepository.findAll().size();
+    }
+
+
     /*@GetMapping("autod/kw-summa") // localhost:8080/api/autod/kw-summa
     public int saaKWSumma() {
         int summa = 0;

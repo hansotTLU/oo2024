@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class AutoController {
     List<String> autod = new ArrayList<>();
 
@@ -31,5 +32,10 @@ public class AutoController {
     public List<String> muudaAuto(@PathVariable int index, @PathVariable String newValue) {
         autod.set(index, newValue);
         return autod;
+    }
+
+    @GetMapping("autod/{index}")
+    public String saaYksAuto(@PathVariable int index) {
+        return autod.get(index);
     }
 }
