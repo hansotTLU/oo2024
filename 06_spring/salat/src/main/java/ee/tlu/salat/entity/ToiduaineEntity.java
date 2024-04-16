@@ -1,4 +1,4 @@
-package ee.tlu.salat;
+package ee.tlu.salat.entity;
 
 // jpa moodulist pärinev. Hibernate.
 // Kui räägite ChatGPT'ga:
@@ -18,10 +18,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ToiduaineEntity {
     @Id // alati unikaalne - kustutamiseks. võtmiseks, muutmiseks (nagu tavaline sql andmebaas)
-    String nimetus;
-    int valk;
-    int rasv;
-    int sysivesik;
+    private String nimetus;
+    private int valk;
+    private int rasv;
+    private int sysivesik;
 
     /*public ToiduaineEntity(String nimetus, int valk, int rasv, int sysivesik) {
         this.nimetus = nimetus;

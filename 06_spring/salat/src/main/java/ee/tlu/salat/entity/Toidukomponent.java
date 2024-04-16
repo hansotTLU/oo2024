@@ -1,4 +1,4 @@
-package ee.tlu.salat;
+package ee.tlu.salat.entity;
 
 // Mis koosneb toiduainest ja temaga seotud kogusest toidu sees
 // Klassikomplekt -> Kartul+omadused ja mitu grammi
@@ -8,8 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @AllArgsConstructor
 @Getter
 @NoArgsConstructor
@@ -18,7 +16,7 @@ public class Toidukomponent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @ManyToOne
+    @ManyToOne //(cascade = CascadeType.ALL) // kui kustutatakse Toiduaine, siis kustuvad ka temaga seotud toidukomponendid
     ToiduaineEntity toiduaine;
 
     //Listi puhul:
