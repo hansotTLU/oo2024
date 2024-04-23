@@ -1,1 +1,14 @@
 Proovikontrolltöö ülesande lahendus kopeerida siia kausta
+
+1. 	Loo uus rakendus veebipood. 	(Spring'is uus asi ja tee lahti)
+	Tee talle mudel "Toode",	(Toode, ToodeController)
+	tee talle Repository kontroller,(ToodeRepository)
+		millega andmebaasi panna, 
+		a välja front-end'is.	(Front-end'i tegemine terminalis: npx create-react-app *nimi*)
+
+2. Tee custom repository päring, millega saab päringusse anda minimaalse ja maksimaalse hinna ja kuvatakse seal vahemikus olevad tooted välja.
+
+3. Võta töötajad: https://reqres.in/api/users ja kuva nad välja
+
+   Võta hankija tooted: https://fakestoreapi.com/products
+		

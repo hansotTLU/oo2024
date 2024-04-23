@@ -1,4 +1,4 @@
-package ee.tlu.kodus;
+package ee.tlu.kodus.controller;
 
 
 import org.springframework.web.bind.annotation.*;

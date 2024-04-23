@@ -1,9 +1,10 @@
-package ee.tlu.kodus;
+package ee.tlu.kodus.controller;
 
+import ee.tlu.kodus.entity.AutoEntity;
+import ee.tlu.kodus.repository.AutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

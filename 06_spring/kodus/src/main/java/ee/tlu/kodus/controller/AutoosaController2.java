@@ -1,5 +1,6 @@
-package ee.tlu.kodus;
+package ee.tlu.kodus.controller;
 
+import ee.tlu.kodus.entity.Autoosa;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

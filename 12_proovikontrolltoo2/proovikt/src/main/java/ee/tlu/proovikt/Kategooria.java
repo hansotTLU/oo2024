@@ -1,22 +1,20 @@
-package ee.tlu.kodus;
+package ee.tlu.proovikt;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@AllArgsConstructor
 @Getter
 @NoArgsConstructor
 @Entity
-public class Autoosa {
+public class Kategooria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    @ManyToOne
-    AutoEntity auto;
+    private Long id;
+    private String nimi;
 
-    int mitu;
+    // @ManyToMany
+    // List<Toode> tooted;
 }

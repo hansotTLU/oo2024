@@ -1,8 +1,7 @@
-package ee.tlu.kodus;
+package ee.tlu.kodus.repository;
 
+import ee.tlu.kodus.entity.AutoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 public interface AutoRepository extends JpaRepository<AutoEntity, String> {
 }
