@@ -27,4 +27,11 @@ public class Toode {
 
     @ManyToOne
     private Kategooria kategooria;
+
+    //  {
+    //      "nimi": "Spagetid",
+    //      "hind": 123,
+    //      "aktiivne": true,
+    //      "kategooria": {"id": 3}
+    //  }
 }

@@ -6,3 +6,17 @@ Teise kontrolltöö tulemus on eksamihinde aluseks:
 3 punkti - A
 
 Muude kursusel esitavate tööde abil saab hinnet mõlemas suunas mõjutada. 
+
+
+2. Poed
+• Tee uus veebiprojekt. Loo klass (entity) pood andmete hoidmiseks (nimetus, avamise ja sulgemise tund ning külastanute arv). Primaarvõtmeks pane kas nimetus või automaatselt genereeritud ID – valik on sinu). Tee poe jaoks nii Repository kui ka Controller ning loo andmebaasiühendus. Võimalda poode võtta andmebaasist, lisada andmebaasi kui ka kustutada andmebaasist. Tee võimalikult lihtne front-end Reactis, mis võimaldab nii võtta, lisada kui ka kustutada andmebaasist läbi Java back-endi.
+
+• Loo API otspunkt, millele parameetrina antakse ette uuritav kellaaeg (üks number – tunnina) ning tagastatakse, mis poed on sel ajal lahti. Lisa API otspunkt külastamiseks, mis suurendab andmebaasis poe külastuste arvu ühe võrra. Näita eraldi API otspunkti kaudu kõige suurema külastatavusega poodi.
+
+Tee RestTemplate päring siia API otspunkti:
+https://reqres.in/api/users?page=2
+Tee API otspunkt selliseks, mis annab kas kõik töötajad Listina või kõik e-mailid Listina (midagi muud ei ole – ei eesnimi, perenime jne) - ainult Stringide List.
+Tee RestTemplate päring siia API otspunkti: https://api.escuelajs.co/api/v1/products .
+Näita eraldi API otspunktides kõige suurema hinnaga toodet, kõige väiksema hinnaga toodet, kõik tooted väiksema hinnaga kui sisestatud hind, kõik tooted suurema hinnaga kui sisestatud hind ja kõik tooted sisestatud hinnavahemikus (5 erinevat API otspunkti).
+
+• Loo andmebaasi võimalus hoiustada Kaubanduskeskusi. Omadusteks anna kaubanduskeskusele nimetus (Primaarvõtmeks pane kas nimetus või automaatselt genereeritud ID – valik on sinu). Ka võimalda küsida Kaubanduskeskuse kõiki poode. Võimalda API otspunktist küsida kindlast kaubanduskeskusest etteantud ajal lahti olevaid poode (annad kaubanduskeskuse primaarvõtme + kellaaja tunni). Tee API otspunkt mis näitab kõige külastatavamat poodi just sellest keskuses. Tee kontroll, mis ei luba uue poe lisamisel lisatava poe sulgemisajal olla kaks või rohkem tundi suurem kui juba kaubanduskeskuse kõige hilisema sulgemisajaga pood (võta kontroll maha kui kaubanduskeskuses pole ühtegi poodi) – sõnumit või veateadet pole vaja tagastada, ära lihtsalt poodi sellisel juhul lisa.

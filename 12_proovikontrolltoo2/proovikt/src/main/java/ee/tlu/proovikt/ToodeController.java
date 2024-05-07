@@ -17,13 +17,13 @@ public class ToodeController {
     }
 
     @PostMapping("tooted")
-    public List<Toode> postToote(@RequestBody Toode toode) {
+    public List<Toode> postToode(@RequestBody Toode toode) {
         toodeRepository.save(toode);
         return toodeRepository.findAll();
     }
 
     @DeleteMapping("tooted/{id}")
-    public List<Toode> deleteToote(@PathVariable Long id) {
+    public List<Toode> deleteToode(@PathVariable Long id) {
         toodeRepository.deleteById(id);
         return toodeRepository.findAll();
     }
